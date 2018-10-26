@@ -33,3 +33,9 @@
         + Configure CLI 
     + Spin up web server
         + Launch EC2 instance 
+        + AMI ID 
+            + Amazon Linux AMI 
+        + Instance type 
+            + Virtual hardware to use for the virtual server 
+        + Security group 
+        + SSH key - pair 

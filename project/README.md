@@ -6,6 +6,7 @@ Online shopping application developed with AWS
 
 # Feature 
 
+
 + Cart API with AWS API gateway and AWS Lambda function 
 
 + Web crawler to crawl data
@@ -13,8 +14,18 @@ Online shopping application developed with AWS
     + Send request to queue 
     + The batch server pick up the request and update the record to IN_PROGRESS 
 
+
     
- 
+    
+    
+    
+    
+    
+    
++ Bot feature - shopping bot 
+    + AWS lambda function for Amazon Lex Shopping bot  
+
+
 
 
 
@@ -54,12 +65,8 @@ Online shopping application developed with AWS
 
 
 # Step  
-
-
-     
-   
-   
 + AWS
+    + Set up AWS credentials 
     + Create AWS VPC 
     + Create RDS instance 
     + Create AWS ElastiCache instance 
@@ -97,6 +104,8 @@ Online shopping application developed with AWS
 
  
 
+
+--------- 
 
 
 

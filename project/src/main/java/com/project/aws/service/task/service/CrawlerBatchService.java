@@ -5,6 +5,7 @@ import com.amazonaws.services.dynamodbv2.document.internal.InternalUtils;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.project.aws.config.Utils;
 import com.project.aws.domain.crawler.WebsiteModel;
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.Jsoup;
@@ -32,7 +33,7 @@ import java.util.stream.Collectors;
 @Service("crawlerBatchService")
 public class CrawlerBatchService implements ICrawlerBatchService {
 
-    
+
     private static final Logger LOG = LoggerFactory.getLogger(CrawlerBatchService.class);
 
     private ConcurrentHashMap<String, WebsiteModel> urls;
@@ -77,36 +78,38 @@ public class CrawlerBatchService implements ICrawlerBatchService {
         );
     }
 
-    @Override
-    public Map<String, AttributeValue> getNodes(WebsiteModel websiteModel) {
 
-        try
-        {
-            ObjectMapper mapper = new ObjectMapper();
-            String string = mapper.writeValueAsString(websiteModel);
-            Item item = new Item().withJSON(Utils.params.nodes, string);
-            return InternalUtils.toAttributeValues(item);
-        }
-        catch (JsonProcessingException e)
-        {
-            LOG.error(e.getMessage());
-        }
-
-        return new HashMap<>();
-    }
-
-    private Mono<String> getBody(URI currentUrl) {
+    /**
+     * Get body from url
+     *
+     * @param url
+     * @return
+     */
+    private Mono<String> getBody(URI url) {
 
         return WebClient.create().get()
-                .uri(currentUrl)
-                .accept(MediaType.TEXT_HTML)
+                .uri(url)
+                .accept(MediaType.TEXT_HTML) // html
                 .exchange()
                 .filter(clientResponse -> clientResponse.statusCode() == HttpStatus.OK)
                 .flatMap(clientResponse -> clientResponse.bodyToMono(String.class))
-                .doOnError(throwable -> LOG.error(Utils.error.failed_get_website, currentUrl))
+                // Error : failed - get - website - url
+                .doOnError(throwable -> LOG.error(Utils.error.failed_get_website, url))
+                // Error resume
                 .onErrorResume(throwable -> Mono.never());
     }
 
+
+    /**
+     * Get website model
+     *
+     * @param seedWebsite
+     * @param parentWebsite
+     * @param currentUrl
+     * @param content
+     * @param depth
+     * @return
+     */
     private Flux<WebsiteModel> getWebsiteModel(WebsiteModel seedWebsite, WebsiteModel parentWebsite, String currentUrl, String content, Integer depth) {
 
         return Mono.just(content)
@@ -140,6 +143,8 @@ public class CrawlerBatchService implements ICrawlerBatchService {
                 });
     }
 
+
+    // Tinh cach con nho nay y chang nhu con trai - no van co li tri de no code tiep
     private Mono<WebsiteModel> getParsedUrl(WebsiteModel currentWebsite, String seedUrl, Integer depth) {
 
         return Mono.just(currentWebsite)
@@ -163,6 +168,17 @@ public class CrawlerBatchService implements ICrawlerBatchService {
                 .filter(website -> StringUtils.startsWith(website.getUrl(), "http"));
     }
 
+
+    /**
+     * Get current website
+     *
+     * @param seedWebsite
+     * @param parentWebsite
+     * @param currentUrl
+     * @param depth
+     * @param document
+     * @return
+     */
     private WebsiteModel getCurrentWebsite(
             WebsiteModel seedWebsite,
             WebsiteModel parentWebsite,

@@ -8,7 +8,10 @@ Online shopping application developed with AWS
 
 + Cart API with AWS API gateway and AWS Lambda function 
 
-+ Web crawler to crawl data 
++ Web crawler to crawl data
+    + URL 
+    + Send request to queue 
+    + The batch server pick up the request and update the record to IN_PROGRESS 
 
 
 
@@ -60,8 +63,8 @@ Online shopping application developed with AWS
     
     
     
-    
-    
+# Running the project 
++ `mvn clean `
 
 
 

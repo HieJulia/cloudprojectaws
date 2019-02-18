@@ -4,14 +4,16 @@ package com.project.aws.service.task;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBAsync;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.PutItemRequest;
-import com.hafidsousa.webcrawler.config.Utils;
-import com.hafidsousa.webcrawler.model.EStatus;
-import com.hafidsousa.webcrawler.model.Profiles;
-import com.hafidsousa.webcrawler.model.WebsiteModel;
-import com.hafidsousa.webcrawler.task.service.ICrawlerBatchService;
+
+import com.project.aws.config.Utils;
+import com.project.aws.domain.crawler.EStatus;
+import com.project.aws.domain.crawler.WebsiteModel;
+import com.project.aws.service.task.service.ICrawlerBatchService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Service;
@@ -24,28 +26,30 @@ import java.util.Map;
 import java.util.Objects;
 
 
-@Service
+@Service("crawlerBatchTask")
 public class CrawlerBatchTask implements ICrawlerBatchTask {
 
-    // Batch task
 
     private static final Logger LOG = LoggerFactory.getLogger(CrawlerBatchTask.class);
 
+
     private AmazonDynamoDBAsync dynamoDBAsync;
 
+
+
+    @Autowired
     private ICrawlerBatchService crawlerBatchService;
 
-    public CrawlerBatchTask(AmazonDynamoDBAsync dynamoDBAsync, ICrawlerBatchService crawlerBatchService) {
 
-        this.dynamoDBAsync = dynamoDBAsync;
-        this.crawlerBatchService = crawlerBatchService;
-    }
+    @Value("${spring.jms.myQueue}")
+    private String QUEUE_NAME;
 
 
+
+    // Get deep crawling
     @Override
     @JmsListener(destination = "crawler_queue")
     public void getDeepCrawling(String urlString) throws URISyntaxException {
-
 
         WebsiteModel seedWebsite = new WebsiteModel();
 
@@ -66,6 +70,15 @@ public class CrawlerBatchTask implements ICrawlerBatchTask {
         }
     }
 
+
+    /**
+     * Put item result to Queue
+     * @param seedUrl
+     * @param status
+     * @param title
+     * @param websiteModel
+     * @return
+     */
     private Mono<Map<String, AttributeValue>> putItemResultMono(
             String seedUrl,
             EStatus status,
@@ -78,9 +91,15 @@ public class CrawlerBatchTask implements ICrawlerBatchTask {
 
         Map<String, AttributeValue> newWebsite = new HashMap<>();
 
-        if (Objects.nonNull(websiteModel)) newWebsite = crawlerBatchService.getNodes(websiteModel);
+//        if (Objects.nonNull(websiteModel)) newWebsite = crawlerBatchService.getNodes(websiteModel);
+
+
+
+
         newWebsite.put(Utils.params.url, new AttributeValue(seedUrl));
+
         newWebsite.put(Utils.params.status, new AttributeValue(status.name()));
+
         if (StringUtils.isNotEmpty(title)) newWebsite.put(Utils.params.title, new AttributeValue(title));
 
         putItemRequest.setItem(newWebsite);

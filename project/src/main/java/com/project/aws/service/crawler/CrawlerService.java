@@ -12,8 +12,11 @@ import com.amazonaws.services.sqs.AmazonSQSAsync;
 import com.amazonaws.services.sqs.model.SendMessageRequest;
 import com.amazonaws.services.sqs.model.SendMessageResult;
 
+import com.project.aws.config.Utils;
+import com.project.aws.domain.crawler.EStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
@@ -28,18 +31,19 @@ public class CrawlerService implements ICrawlerService {
 
     private static final Logger LOG = LoggerFactory.getLogger(CrawlerService.class);
 
+
+    @Autowired
     private AmazonDynamoDBAsync dynamoDBAsync;
 
+
+    @Autowired
     private AmazonSQSAsync sqs;
+
 
     @Value("${aws.sqs.endpoint}")
     private String SQS_ENDPOINT;
 
-    public CrawlerService(AmazonDynamoDBAsync dynamoDBAsync, AmazonSQSAsync sqs) {
 
-        this.dynamoDBAsync = dynamoDBAsync;
-        this.sqs = sqs;
-    }
 
     // Get website
     @Override
@@ -92,9 +96,13 @@ public class CrawlerService implements ICrawlerService {
     }
 
 
-    // Send message function
+    /**
+     * Send message
+     * @param body
+     * @return
+     */
     private Mono<SendMessageResult> sendMessage(String body) {
-        // SQS endpoint - body
+        // Send message to AWS SQS
         SendMessageRequest sendMessageRequest = new SendMessageRequest(
                 SQS_ENDPOINT,
                 body
@@ -104,8 +112,11 @@ public class CrawlerService implements ICrawlerService {
                 Utils.makeCompletableFuture(
                         // sqs.sendMessageAsync
                         sqs.sendMessageAsync(sendMessageRequest)))
+                // Log error
+                .doOnError((throwable -> LOG.error(Utils.error.failed_sqs, body))); // end log error
 
-                .doOnError((throwable -> LOG.error(Utils.error.failed_sqs, body)));
+        // Con nho nay han quay - no choc choc choi cho vui thoi - con nho nay no khon lam
+
     }
 
 

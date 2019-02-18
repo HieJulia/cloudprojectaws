@@ -60,6 +60,8 @@ public class AppConfig {
 
     }
 
+
+    //  SQS connection factory -
     @Bean
     public SQSConnectionFactory sqsConnectionFactory() throws JMSException {
 
@@ -71,6 +73,7 @@ public class AppConfig {
         );
     }
 
+    // Config JMS
     @Bean
     public DefaultJmsListenerContainerFactory jmsListenerContainerFactory() throws JMSException {
 

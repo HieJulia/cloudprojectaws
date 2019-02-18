@@ -13,3 +13,9 @@ public interface ICrawlerBatchTask {
     // Get deep crawling task
     void getDeepCrawling(String requestJSON) throws URISyntaxException, JsonProcessingException;
 }
+
+
+
+
+//batch task : crawling task
+

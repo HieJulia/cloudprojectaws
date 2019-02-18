@@ -13,7 +13,7 @@ import java.util.Set;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Data
-@DynamoDBTable(tableName = DynamoDBConfiguration.CART_TABLE_NAME)
+@DynamoDBTable(tableName = "websitemodel")
 @JsonIgnoreProperties(ignoreUnknown=true)
 public class WebsiteModel implements Serializable {
     // Website Model

@@ -29,13 +29,14 @@ public class WebsiteModelDaoImpl implements WebsiteModelDao{
     private static AmazonDynamoDBClient ddbClient = new AmazonDynamoDBClient();
 
     // Con be nay thong minh vcl ra
-    
 
 
 
+    // get by url
 
     @Override
     public WebsiteModel getByUrl(String url) {
+        // Query expression to pull
         return null;
     }
 

@@ -32,6 +32,13 @@ Online shopping application developed with AWS
     + AWS API gateway
     + Database : AWS DynamoDB
     + SQS endpoint 
+    + Amazon Elastic Beanstalk
+       
+    
+    
+   
+   
+   
     
      
 + Jenkins 
@@ -47,6 +54,19 @@ Online shopping application developed with AWS
 
 
 # Step  
+
+
+     
+   
+   
++ AWS
+    + Create AWS VPC 
+    + Create RDS instance 
+    + Create AWS ElastiCache instance 
+    + Build application `mvn package`
+    + Deploy the application in Amazon Elastic Beanstalk 
+     
+
 
 
 + Create table on DynamoDB

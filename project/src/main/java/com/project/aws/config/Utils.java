@@ -51,16 +51,19 @@ public final class Utils {
 
         public static final String failed_get_website = "Unable to Get Website {}";
 
-        public static final String failed_
+        public static final String failed_aws = "Unable to connect to AWS ";
     }
 
 
 
-
+// Public static final class
     public static final class success {
 
         public static final String saved_dynamo = "Saved item {}";
         public static final String log_recursion= "Depth <%d> || Base URL <%s> || Child URL <%s>";
+
+        // Con nho nay ben trong no la 1 cai thang
+
     }
 
     public static final class document {

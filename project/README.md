@@ -13,9 +13,7 @@ Online shopping application developed with AWS
     + Send request to queue 
     + The batch server pick up the request and update the record to IN_PROGRESS 
 
-
-
-
+    
  
 
 
@@ -38,8 +36,14 @@ Online shopping application developed with AWS
      
 + Jenkins 
 
++ JMS  
+
++ Test : Wiremocks 
+
++ Jsoup
 
 
+ 
 
 
 # Step  
@@ -68,9 +72,7 @@ Online shopping application developed with AWS
 
 
 
-
-
-
+# Run test class 
 
 
  

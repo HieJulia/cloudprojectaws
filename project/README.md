@@ -57,7 +57,24 @@ Online shopping application developed with AWS
     + Create AWS ElastiCache instance 
     + Build application `mvn package`
     + Deploy the application in Amazon Elastic Beanstalk 
-     
+    + AWS Lambda functions 
+    + AWS CLI 
+    + MySQL RDS database 
+    + Serverless framework 
+    + Spring Cloud AWS 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
 
@@ -91,20 +108,6 @@ Online shopping application developed with AWS
 
 
 --------- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

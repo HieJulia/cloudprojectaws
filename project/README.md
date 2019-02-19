@@ -96,8 +96,12 @@ Online shopping application developed with AWS
     
     
     
-# Running the project 
+# Running the project
+ 
 + `mvn clean `
+
++ Run the example : `java -jar project.jar us-west-2`
+
 
 
 

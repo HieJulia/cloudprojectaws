@@ -13,14 +13,6 @@ Online shopping application developed with AWS
     + URL 
     + Send request to queue 
     + The batch server pick up the request and update the record to IN_PROGRESS 
-
-
-    
-    
-    
-    
-    
-    
     
 + Bot feature - shopping bot 
     + AWS lambda function for Amazon Lex Shopping bot  
@@ -45,13 +37,7 @@ Online shopping application developed with AWS
     + SQS endpoint 
     + Amazon Elastic Beanstalk
        
-    
-    
    
-   
-   
-    
-     
 + Jenkins 
 
 + JMS  
@@ -61,7 +47,6 @@ Online shopping application developed with AWS
 + Jsoup
 
 
- 
 
 
 # Step  
@@ -106,6 +91,29 @@ Online shopping application developed with AWS
 
 
 --------- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

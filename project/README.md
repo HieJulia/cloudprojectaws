@@ -17,6 +17,12 @@ Online shopping application developed with AWS
 + Bot feature - shopping bot 
     + AWS lambda function for Amazon Lex Shopping bot  
 
++ PDF service 
+
+
+
+
+
 
 
 
@@ -64,18 +70,7 @@ Online shopping application developed with AWS
     + Spring Cloud AWS 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
+   
 
 
 + Create table on DynamoDB

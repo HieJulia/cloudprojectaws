@@ -23,10 +23,6 @@ Online shopping application developed with AWS
 
 
 
-
-
-
-
 # Stack
 
  
@@ -102,11 +98,10 @@ Online shopping application developed with AWS
 
 # Run test class 
 
++ Run test class 
 
- 
 
 
---------- 
 
 
 

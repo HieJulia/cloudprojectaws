@@ -20,5 +20,8 @@ nohup java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=9999 -j
 
 
 
+// bat ngo chua - cai toi cua may - tao cho may o day ne - 
 
 
+
+// choc cho tuc choi vui 

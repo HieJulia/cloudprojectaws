@@ -95,6 +95,12 @@ Online shopping application developed with AWS
 
 
 
++ AWS SES sender email 
+
+
+
+
+
 
    
     

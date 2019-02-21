@@ -22,3 +22,7 @@ java \
 --spring.datasource.password=${db_password} \
 --products.endpoint=http://${products_endpoint} \
 --payment.endpoint=http://${payment_endpoint}
+
+
+
+# No noi may khong co dao duc ve nghe nghiep day - do thang nay hoag tuong thoi 

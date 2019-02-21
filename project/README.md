@@ -109,12 +109,8 @@ Online shopping application developed with AWS
  
 + Generic e-mailer using Amazon SES SMTP Java Interface
 
++ AWS data pipeline task runner
 
-
-no nghe het ma- a du no hieu ma - no hieu so so 
-
-
-cai dau cua dan chau a kinh khung vcl ra 
 
 
 
@@ -164,7 +160,3 @@ cai dau cua dan chau a kinh khung vcl ra
 
 
 # A build deploy docker image to work with Java application and AWS
-
-
-
-

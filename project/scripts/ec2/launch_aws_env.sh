@@ -30,19 +30,31 @@ export APP_SRV_SG_ID=$(aws ec2 create-security-group --group-name $APP_SRV_SG_NA
 export DB_SG_NAME=demo2DbServerSg
 export DB_SG_ID=$(aws ec2 create-security-group --group-name $DB_SG_NAME --description "Database" --vpc-id $VPC_ID | jq -r '.GroupId')
 
+
+# Generate Security group
+
 aws ec2 authorize-security-group-ingress --group-name $DB_SG_NAME --protocol tcp --port 3306 --source-group $APP_SRV_SG_ID
+
+
 
 aws ec2 authorize-security-group-ingress --group-name $APP_SRV_SG_NAME --ip-protocol tcp --from-port 22 --to-port 22 --cidr-ip 0.0.0.0/0
 
 echo Creating RDS Instance
 
 export SUBNET_GROUP_NAME=demo2AllVpcSubnets
+
+
+# Create
+
+
+# Create subnet group
 aws rds create-db-subnet-group --db-subnet-group-name $SUBNET_GROUP_NAME --db-subnet-group-description "All subnet groups" --subnet-ids $VPC_SUBNETS
 
 export DB_NAME=demo2Database
 export DB_MASTER_USER=master123
 export DB_MASTER_PASS=mAsTeR321
 
+# Create RDS instance
 aws rds create-db-instance --db-name $DB_NAME --db-instance-identifier $DB_NAME --allocated-storage 5 --db-instance-class db.t2.micro \
                            --engine mysql --master-username $DB_MASTER_USER --master-user-password $DB_MASTER_PASS \
                            --vpc-security-group-ids $DB_SG_ID --db-subnet-group-name $SUBNET_GROUP_NAME \
@@ -58,13 +70,19 @@ done
 echo Uploading WAR to new S3 Bucket
 # S3 public-read for simplicity - _most likely_ not feasible for production!
 
+
+
 export DEPLOY_BUKET_NAME=cascloud2016install
 export DEPLOY_BUCKET_LOCATION=eu-west-1
 
+
+# Create AWS S3 bucket
 aws s3api create-bucket --create-bucket-configuration LocationConstraint=$DEPLOY_BUCKET_LOCATION --bucket $DEPLOY_BUKET_NAME
 
 export WAR_FILE_LOCAL=target/demo-web-0.0.1-SNAPSHOT.war
 export WAR_FILE_BUCKET=application.war
+
+
 
 aws s3 cp $WAR_FILE_LOCAL s3://$DEPLOY_BUKET_NAME/$WAR_FILE_BUCKET --acl public-read
 
@@ -73,6 +91,7 @@ echo EC2 Instance Dependencies
 export RSA_KEY_NAME=demo2ec2userkey
 export RSA_KEY_FILE=demo2ec2userkey
 
+# Generate keygen
 ssh-keygen -N "" -t rsa -b 4096 -f $RSA_KEY_FILE
 aws ec2 import-key-pair --public-key-material file://$RSA_KEY_FILE.pub --key-name $RSA_KEY_NAME
 

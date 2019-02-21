@@ -19,7 +19,8 @@ Online shopping application developed with AWS
 
 + PDF service 
 
-
++ Streaming service 
+    + Audio stream service 
 
 
 
@@ -82,7 +83,19 @@ Online shopping application developed with AWS
     +  
     
     
-    
++ AWS Kinesis stream 
+    + Subscribe to AWS Kinesis stream
+    + Devices send data to cloud  
+    + Subscribe Kinesis stream to ARTIK cloud via API calls 
+    + Read data from Kinesis Stream using AWS SDK  
+
+
++ AWS Healthcheck 
+
+
+
+
+
    
     
     
@@ -99,6 +112,11 @@ Online shopping application developed with AWS
 # Run test class 
 
 + Run test class 
+
+
+
+
+
 
 
 

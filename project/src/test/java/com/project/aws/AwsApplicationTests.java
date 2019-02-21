@@ -14,3 +14,7 @@ public class AwsApplicationTests {
 	}
 
 }
+
+
+
+// No khong y thuc duoc cai dieu day - don gian la the thoi - tao biet het ma

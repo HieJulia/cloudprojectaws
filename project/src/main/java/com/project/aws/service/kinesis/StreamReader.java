@@ -134,7 +134,14 @@
 //
 //Ta noi roi - cho vui vay thoi
 
+
+
+// Ta biet cai kieu con nho nay ma - a du - duoc ne - ta biet -
+
+
+// Chua nghiem tuc trong chuyen tinh cam dau - Ta biet cai kieu con nho nay roi -
+
 //
 //
-//
+// No cha co y gi ca 
 //}

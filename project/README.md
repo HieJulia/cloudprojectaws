@@ -107,6 +107,19 @@ Online shopping application developed with AWS
 
 
  
++ Generic e-mailer using Amazon SES SMTP Java Interface
+
+
+
+no nghe het ma- a du no hieu ma - no hieu so so 
+
+
+cai dau cua dan chau a kinh khung vcl ra 
+
+
+
+
+
 
 
   build the image docker build -t build-deploy:latest -f Dockerfile .
@@ -150,10 +163,7 @@ Online shopping application developed with AWS
 
 
 
-
-
-
-
+# A build deploy docker image to work with Java application and AWS
 
 
 

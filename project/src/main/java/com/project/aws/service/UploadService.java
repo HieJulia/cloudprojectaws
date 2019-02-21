@@ -42,9 +42,11 @@ public class UploadService {
     @Value("${AWSS3.secretKey}")
     private String secretKey;
 
+    // AWS : region - url - bucket name - access key - secret key
+
 
     /**
-     * Upload image to AWS S3 bucket 
+     * Upload image to AWS S3 bucket
       * @param multipartFile
      * @return
      */
@@ -82,6 +84,8 @@ public class UploadService {
 
     // Upload image to AWS S3 bucket
     private void uploadImageToS3Bucket(String imageName, File file) {
+
+        // aws s3 client
         amazonS3Client.putObject(
                 new PutObjectRequest(this.bucketName, imageName, file).withCannedAcl(CannedAccessControlList.PublicRead));
     }

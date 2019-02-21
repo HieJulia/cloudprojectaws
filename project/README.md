@@ -21,7 +21,7 @@ Online shopping application developed with AWS
 + Allow Read / Write from local to remote instances
 + Detect online shop labels with AWS Rekognition 
 + ETL processing on the cloud 
-+ Product photo upload 
++ Product photo upload AWS S3 service 
 
 
 

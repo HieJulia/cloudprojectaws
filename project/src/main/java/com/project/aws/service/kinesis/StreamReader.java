@@ -143,5 +143,13 @@
 
 //
 //
-// No cha co y gi ca 
+// No cha co y gi ca
+
+
+// No thich choi choi vay thoi - Vo tay - Deo ai quan tam ca -
+
+// Cai kieu vui choi cua no ay ma
+
+// Stream application with Java FX  
+
 //}

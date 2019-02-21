@@ -20,3 +20,4 @@ nohup java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=9999 -j
 
 
 
+# Tinh con nho nay no hay bat chuoc vay a ma - Ko co dau - Tuy ban thoi 

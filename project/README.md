@@ -6,43 +6,27 @@ Online shopping application developed with AWS
 
 # Feature 
 
-
 + Cart API with AWS API gateway and AWS Lambda function 
-
 + Web crawler to crawl data
     + URL 
     + Send request to queue 
     + The batch server pick up the request and update the record to IN_PROGRESS 
-    
 + Bot feature - shopping bot 
     + AWS lambda function for Amazon Lex Shopping bot  
-
 + PDF service 
-
 + Streaming service 
     + Audio stream service
-    
-    
 + Service to detect object and then index in AWS ElasticSearch database 
-
 + AWS Router 53 - hosted zone DNS record 
++ Allow Read / Write from local to remote instances
++ Detect online shop labels with AWS Rekognition 
++ ETL processing on the cloud 
++ Product photo upload 
 
-+ AWS inflashstructure (EC2, Database RDS, Mail service SES, etc) to run system on the cloud inflashstructure.
-+ AWS EC2 
-+ AWS RDS 
-+ AWS Mail service SES 
+
+
+
  
-
-
-  
-+ Allow Read / Write from local to remote instances  
-
-
-
-
-
-
-  
 
 
 

@@ -19,5 +19,10 @@ nohup java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=9999 -j
 
 
 
+# Muoi doi moi co the duoi viec duoc tao nhe - ra day ngoi lam cho vui thoi - thich ngoi day
 
-# Tinh con nho nay no hay bat chuoc vay a ma - Ko co dau - Tuy ban thoi 
+
+
+# Ta biet ma - Con nho nay no dau co quan tam dau 
+
+

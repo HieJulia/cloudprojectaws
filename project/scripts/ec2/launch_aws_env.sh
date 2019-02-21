@@ -21,6 +21,7 @@ export VPC_SUBNETS=$(aws ec2 describe-subnets | jq -r ".Subnets[].SubnetId" | tr
 
 export FIRST_VPC_SUB=$(aws ec2 describe-subnets | jq -r ".Subnets[0].SubnetId")
 
+# Tui no tuong minh tan 2 nguoi cung 1 luc a - bay gio no da nhan ra - cai kieu nhu vayt
 
 echo Generating Security Groups
 
@@ -165,6 +166,11 @@ aws cloudwatch put-metric-alarm --alarm-name $LOW_ALARM_NAME --actions-enabled -
 
 echo Try this in a few minutes:
 echo curl -s http://$LB_DNS
+
+
+
+
+
 
 
 

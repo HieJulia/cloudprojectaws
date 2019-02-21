@@ -23,7 +23,30 @@ Online shopping application developed with AWS
     + Audio stream service
     
     
-    
++ Service to detect object and then index in AWS ElasticSearch database 
+
++ AWS Router 53 - hosted zone DNS record 
+
++ AWS inflashstructure (EC2, Database RDS, Mail service SES, etc) to run system on the cloud inflashstructure.
++ AWS EC2 
++ AWS RDS 
++ AWS Mail service SES 
+ 
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
   
 
 
@@ -113,7 +136,8 @@ Online shopping application developed with AWS
 
 
 
-
++ AWS ElasticSearch 
++ AWS Rekcognition
 
 
 
@@ -139,6 +163,23 @@ Online shopping application developed with AWS
   To get the build number sh "echo ${BUILD_NUMBER}"
   
   Jenkins login - admin - admin
+  
+  
++ Deploy the web application : 
+
+    + Tao se khong di dau 
+    
+    
+    
++ AWS EC2 instance -> deploy the application 
+
+
+
+
+
+
+
+ 
 
     
     
@@ -160,3 +201,6 @@ Online shopping application developed with AWS
 
 
 # A build deploy docker image to work with Java application and AWS
+
+
+

@@ -35,12 +35,7 @@ Online shopping application developed with AWS
 
 
   
-
-
-  
-
-
-
++ Allow Read / Write from local to remote instances  
 
 
 

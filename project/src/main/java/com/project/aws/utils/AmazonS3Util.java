@@ -31,11 +31,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class AmazonS3Util {
 
-    @Autowired
-    private AppConfig appConfig;
+    // Ta biet cai kieu con nho nay roi - bay tro vui vui thoi -
 
-
-
+    // Day la con nguoi tap trung cho su nghiep
 
 
     //AmazonS3Client
@@ -47,16 +45,21 @@ public class AmazonS3Util {
 
     String bucketName="";
 
-    //Init AmazonS3Client
+
+
     public AmazonS3Util(){}
     private void AmazonS3Setup() {
         if (s3Client == null) {
             AWSCredentials credentials = null;
             try {
                 // Load config
-                accessKey = appConfig.getValueOfKey("amazons3.accesskey");
-                secretKey = appConfig.getValueOfKey("amazons3.secretkey");
-                bucketName = appConfig.getValueOfKey("amazons3.bucket");
+                accessKey = "";
+                secretKey = "";
+                bucketName = "";
+
+                // Tinh cach no la tinh cach cua 1 cai thang ay - No bo la no bo xuong luon a nghe may
+
+
                 credentials = new BasicAWSCredentials(accessKey, secretKey);
                 s3Client = new AmazonS3Client(credentials);
             } catch (Exception e) {
@@ -75,10 +78,10 @@ public class AmazonS3Util {
     public boolean downLoadToLocaServer(String targetPath,String keyName, String fileName) {
         try {
             AmazonS3Setup();
-            EventLogManager.getInstance().info("Process download from Amazon to local server key name="+ keyName);
-            System.out.println("Downloading an object");
+
+
             S3Object object = s3Client.getObject(new GetObjectRequest(bucketName, keyName));
-            System.out.println("Content-Type: " + object.getObjectMetadata().getContentType());
+
             object.getObjectContent();
             String targetFilePath=targetPath+fileName;
             File targetFile = new File(targetFilePath);
@@ -95,6 +98,11 @@ public class AmazonS3Util {
         }
     }
 
+    // Cha biet con lin nay no dang suy nghi gi nua - No dua dua vay thoi
+
+    // Chu khong co y gi dau
+
+
 
     /**
      * getURLDownload
@@ -105,7 +113,7 @@ public class AmazonS3Util {
         String urlString = "";
         try {
             AmazonS3Setup();
-            System.out.println("Generating pre-signed URL.");
+            // Ngay day no thich thiet - Day ne nhin di - Kieu nua ha - Tu nao den gio no biet het - Chu no khong ngay tho dau
             java.util.Date expiration = new java.util.Date();
             long milliSeconds = expiration.getTime();
             milliSeconds += 3000 * 60 * 60; // Add 3 hours.
@@ -115,16 +123,16 @@ public class AmazonS3Util {
             generatePresignedUrlRequest.setExpiration(expiration);
             URL url = s3Client.generatePresignedUrl(generatePresignedUrlRequest);
             urlString = url.toString();
-            EventLogManager.getInstance().info("Generating pre-signed URL Amazon="+urlString);
+
         } catch (Exception e) {
-            EventLogManager.getInstance().error(e.getMessage());
+
             e.printStackTrace();
         }
         return urlString;
     }
 
 
-    // Co the day - nhung no het thich roi
+    // Kieu bi dien - Tui bay kieu hoang tuong qua - Thoai mai ma duoi viec tao day nay
 
 
     /**
@@ -137,7 +145,6 @@ public class AmazonS3Util {
     long partSize = 5 * 1024 * 1024;
     public boolean uploadFile(String filePath,String keyName) {
         try {
-            EventLogManager.getInstance().info("Process upload to Amazon key name="+ keyName);
             AmazonS3Setup();
             // Create a list of UploadPartResponse objects. You get one of these
             // for each part upload.
@@ -184,12 +191,12 @@ public class AmazonS3Util {
             } catch (Exception e) {
                 s3Client.abortMultipartUpload(new AbortMultipartUploadRequest(
                         bucketName, keyName, initResponse.getUploadId()));
-                EventLogManager.getInstance().error(e.getMessage());
+
                 return false;
             }
         } catch (Exception e) {
             e.printStackTrace();
-            EventLogManager.getInstance().error(e.getMessage());
+
             return false;
         }
 
@@ -206,7 +213,7 @@ public class AmazonS3Util {
         {
             AmazonS3Setup();
             s3Client.deleteObject(new DeleteObjectRequest(bucketName, keyName));
-            EventLogManager.getInstance().info("Process delete file from Amazon key name="+ keyName);
+
             return true;
         }catch (AmazonClientException ace)
         {
@@ -214,6 +221,7 @@ public class AmazonS3Util {
         }
     }
 
+    // No gia vo day mi oi - Mat no kieu - Tui dau co biet cai me gi dau -
 
     /**
      *
@@ -241,3 +249,4 @@ public class AmazonS3Util {
     }
 
 }
+

@@ -99,11 +99,6 @@ Online shopping application developed with AWS
 
 
 
-
-
-
-   
-    
     
     
 # Running the project
@@ -121,12 +116,7 @@ Online shopping application developed with AWS
 
 
 
-
-
-
-
-
-
+=
 
 
 

@@ -22,6 +22,17 @@ Online shopping application developed with AWS
 + Detect online shop labels with AWS Rekognition 
 + ETL processing on the cloud 
 + Product photo upload AWS S3 service 
++ 
+
+
+
+# Buoc lai day ma duoi tao - 
+
+
+
+# No dang ban suy nghi 
+
+
 
 
 

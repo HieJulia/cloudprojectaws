@@ -22,22 +22,7 @@ Online shopping application developed with AWS
 + Detect online shop labels with AWS Rekognition 
 + ETL processing on the cloud 
 + Product photo upload AWS S3 service 
-+ 
-
-
-
-# Buoc lai day ma duoi tao - 
-
-
-
-# No dang ban suy nghi 
-
-
-
-
-
-
- 
++ Chat bot provided for customers to ask about shopping product with AWS Lex   
 
 
 
@@ -191,6 +176,51 @@ Online shopping application developed with AWS
 
 
 # A build deploy docker image to work with Java application and AWS
+
+
+
+# Docker image build
+
+`docker build -t devbhuwan/order-manager-image -f infrastructure/Dockerfile .`
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://github.com/waleedarafa/Ecommerce-Shopping
+
+https://github.com/BhuwanUpadhyay/order-manager
+
+https://github.com/humank/spring-petclinic
+https://github.com/1904labs/AWS-ElasticSearch-Spring-Boot-Starter-Project
+
+
+
+
+
+https://github.com/varun1524/SurveyApe
+https://github.com/jyotisalitra/aws-s3-rds
+https://github.com/SainathDutkar/StockWatch
+https://github.com/iftekharkhan09/AWS/tree/master/src/main/java/com/amazonaws/ses/samples
+
+
+
+
+
+
+
+
+
+
+
 
 
 

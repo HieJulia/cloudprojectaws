@@ -251,3 +251,4 @@ https://github.com/smoketurner/uploader
 
 
 
+e thu vi day - thay ko - no ghet den muc day - duc mat va ngoi day cho 

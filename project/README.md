@@ -34,10 +34,6 @@ Online shopping application developed with AWS
 
 
 
-
-
-
-
 # Stack
 
  
@@ -228,9 +224,6 @@ Online shopping application developed with AWS
 
 
 
-
-
-
 https://github.com/waleedarafa/Ecommerce-Shopping
 https://github.com/BhuwanUpadhyay/order-manager
 https://github.com/1904labs/AWS-ElasticSearch-Spring-Boot-Starter-Project
@@ -251,6 +244,9 @@ https://github.com/smoketurner/uploader
 
 
 -----------------
+
+
+
 
 
 

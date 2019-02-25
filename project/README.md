@@ -27,7 +27,11 @@ Online shopping application developed with AWS
 
 
 
-+ Cung dau co lam duoc gi - Chi can nhac den la no biet 
+
+
+
+
+
 
 
 
@@ -250,5 +254,3 @@ https://github.com/smoketurner/uploader
 
 
 
-
-e thu vi day - thay ko - no ghet den muc day - duc mat va ngoi day cho 

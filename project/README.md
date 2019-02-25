@@ -188,24 +188,10 @@ Online shopping application developed with AWS
 
 
 
-
-
-
-
-
-
-
 https://github.com/waleedarafa/Ecommerce-Shopping
-
 https://github.com/BhuwanUpadhyay/order-manager
-
 https://github.com/humank/spring-petclinic
 https://github.com/1904labs/AWS-ElasticSearch-Spring-Boot-Starter-Project
-
-
-
-
-
 https://github.com/varun1524/SurveyApe
 https://github.com/jyotisalitra/aws-s3-rds
 https://github.com/SainathDutkar/StockWatch
@@ -216,6 +202,26 @@ https://github.com/iftekharkhan09/AWS/tree/master/src/main/java/com/amazonaws/se
 
 
 
+
+
+Big project : 
+https://github.com/Sandyarathi/eshop-microservice
+https://github.com/petergu/aws-sqs-lambda-java
+
+https://github.com/cganoo/codecamptweetsearcher
+https://github.com/smoketurner/uploader
+
+
+
+-----------------
+
+
+
+
+no cam thay kho hieu 
+
+
+create Form 
 
 
 

@@ -46,8 +46,6 @@
     + Component : Application
 
 
-
-
 + AWS security - best practice 
     + Security by design 
         + Security of AWS env : tools,services, features to secure AWS env (networks, system, resources, encryption service, logging, config rules, identity management)
@@ -99,3 +97,12 @@
         + Push the simple app 
 + PCF Dev 
     + 
+
+
+
+
+
+------------
+
+
+

@@ -26,6 +26,14 @@ Online shopping application developed with AWS
 
 
 
+
++ Cung dau co lam duoc gi - Chi can nhac den la no biet 
+
+
+
+
+
+
 # Stack
 
  
@@ -116,6 +124,28 @@ Online shopping application developed with AWS
 
 
 
++ View the CloudWatch logs 
+    `serverless logs --function functionName`
+
++ View the metrics from the serverless framework 
+    `serverless metrics`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------
+
 
   build the image docker build -t build-deploy:latest -f Dockerfile .
   
@@ -160,22 +190,6 @@ Online shopping application developed with AWS
     `aws cloudformation describe-stacks --stack-name spring-petclinic | jq '.Stacks[0].Outputs[0].OutputValue'`
     
     
-    
-
-
-
-
-
-
-
-
-
-
-
- 
-
-    
-    
 # Running the project
  
 + `mvn clean `
@@ -187,7 +201,9 @@ Online shopping application developed with AWS
 
 # Run test class 
 
-+ Run test class 
++ Run test class
+
+
 
 
 
@@ -200,6 +216,11 @@ Online shopping application developed with AWS
 # Docker image build
 
 `docker build -t devbhuwan/order-manager-image -f infrastructure/Dockerfile .`
+
+
+
+# Deploy the serverless app 
++ `sls deploy`
 
 
 
@@ -226,5 +247,7 @@ https://github.com/smoketurner/uploader
 
 
 -----------------
+
+
 
 

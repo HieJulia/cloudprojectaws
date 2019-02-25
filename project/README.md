@@ -142,11 +142,29 @@ Online shopping application developed with AWS
   
 + Deploy the web application : 
 
-    + Tao se khong di dau 
+     
     
     
     
 + AWS EC2 instance -> deploy the application 
+
+
+
+
++ Deploy application commands 
+     
+    `aws cloudformation package --template-file sam.yaml --output-template-file output-sam.yaml --s3-bucket lambda-jar-upload`
+    
+    `aws cloudformation deploy --template-file output-sam.yaml --stack-name spring-petclinic --capabilities CAPABILITY_IAM` 
+    
+    `aws cloudformation describe-stacks --stack-name spring-petclinic | jq '.Stacks[0].Outputs[0].OutputValue'`
+    
+    
+    
+
+
+
+
 
 
 
@@ -190,16 +208,10 @@ Online shopping application developed with AWS
 
 https://github.com/waleedarafa/Ecommerce-Shopping
 https://github.com/BhuwanUpadhyay/order-manager
-https://github.com/humank/spring-petclinic
 https://github.com/1904labs/AWS-ElasticSearch-Spring-Boot-Starter-Project
 https://github.com/varun1524/SurveyApe
-https://github.com/jyotisalitra/aws-s3-rds
 https://github.com/SainathDutkar/StockWatch
 https://github.com/iftekharkhan09/AWS/tree/master/src/main/java/com/amazonaws/ses/samples
-
-
-
-
 
 
 
@@ -218,10 +230,10 @@ https://github.com/smoketurner/uploader
 
 
 
-no cam thay kho hieu 
 
 
-create Form 
+cu tiep tuc cuoi len 
+
 
 
 

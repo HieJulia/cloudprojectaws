@@ -1,0 +1,33 @@
+branch-defaults:
+  # Env dev :
+
+  #
+  develop:
+    environment: project
+  stagiing :
+    environment: project
+  master:
+    environment: project
+  release:
+    environment: project
+
+
+deploy:
+  artifact: ./build/libs/project.jar
+
+
+global:
+  application_name: java
+  default_platform: Java 8
+  default_region: us-east-1
+
+
+
+
+
+
+
+
+-----
+
+

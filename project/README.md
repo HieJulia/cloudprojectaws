@@ -228,17 +228,3 @@ https://github.com/smoketurner/uploader
 -----------------
 
 
-
-
-
-
-cu tiep tuc cuoi len 
-
-
-
-
-
-
-
-
-

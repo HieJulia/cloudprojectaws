@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.apache.commons.codec.binary.Base64;
 import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.URLEncoder;
 
@@ -46,19 +47,11 @@ public class S3ServiceImpl {
      */
     public void uploadImage1(String fileName, String uploadFilePath) {
 
-        // Validation
-
-            // fileName : is not null -
-
-        // utf 8
-
-        // No doc duoc het - a du con lin nay cung vai chuong
-
-//        String validName = URLEncoder.encode( fileName , "UTF-8");
-            // uploadFilePath : not null
-
-
-
+        if(this.isFilenameValid(fileName)) {
+            File file = new File(uploadFilePath);
+        } else {
+            // throw exception
+        }
         // Uplodate image
         // Get file
         File file = new File(uploadFilePath);
@@ -67,32 +60,48 @@ public class S3ServiceImpl {
         s3client.putObject(new PutObjectRequest(bucketName, fileName, file));
     }
 
-    // Function to check if file name is valid
+
+    /**
+     * Check if file name is valid
+     * @param file
+     * @return
+     */
+    public static boolean isFilenameValid(String file) {
+        File f = new File(file);
+        try {
+            f.getCanonicalPath();
+            return true;
+        }
+        catch (IOException e) {
+            return false;
+        }
+    }
 
 
-
-
-
-    // Chet me may chua - no ngoi no buc mat o day luon - vao chieu cua no roi - no chui keu ko co dao duc nghe ngheip nay
-
+    /**
+     * Upload product image
+     * @param fileName
+     * @param imageString
+     */
 
     public void uploadImage(String fileName, String imageString) {
-//        System.out.println(imageString.substring(0,imageString.indexOf(",")+1));
-//        System.out.println(imageString.split(";")[0].split(":")[1]);
+
+        // File name - image string
         //Convert base64 imagestring to byte data
         byte[] byteImage = Base64.decodeBase64(
                 (imageString.substring(imageString.indexOf(",")+1)).getBytes());
 
         InputStream inputStream = new ByteArrayInputStream(byteImage);
 
-//        System.out.println(s3client);
+
 
         ObjectMetadata objectMetadata = new ObjectMetadata();
         objectMetadata.setContentLength(byteImage.length);
         objectMetadata.setContentType(imageString.split(";")[0].split(":")[1]);
 //        metadata.setCacheControl("public, max-age=31536000");
         PutObjectResult result = s3client.putObject(bucketName, fileName, inputStream, objectMetadata);
-        System.out.println(result);
+        // s3client - set object
         s3client.setObjectAcl(bucketName, fileName, CannedAccessControlList.PublicRead);
     }
 }
+

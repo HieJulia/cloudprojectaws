@@ -26,14 +26,20 @@ Online shopping application developed with AWS
 
 + Uploader service - TCP port - upload data to AWS S3 
 
-
-
-
-
-
-
-
-
++ Integrate AWS Lambda - API gateway - SQS
+    + Other system hit the API gateway endpoint 
+    + API gateway sends messages to SQS queue 
+    + SQS queue receives and stores messages 
+    + Cloudwatch event rule triggers the Lambda consumer based on schedule - 10 mins 
+    + Lambda consumer reads message from SQS - invoke woker for each message async 
+    + 
+    
+    
+    
+    
+    
+    
+    
 # Stack
 
  
@@ -68,11 +74,8 @@ Online shopping application developed with AWS
 + Deployment : AWS EC2 
 
 
-
-
-
-
-
++ AWS Lambda functions 
+     
 
 
 
@@ -276,13 +279,6 @@ https://github.com/smoketurner/uploader
 
 
 
------------------
-
-
-
-
-
-
-
+--------------
 
 

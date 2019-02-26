@@ -282,3 +282,7 @@ https://github.com/smoketurner/uploader
 --------------
 
 
+choi duoc no choi tu lau roi 
+
+
+1 phong cach mac do h 

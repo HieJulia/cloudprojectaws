@@ -24,7 +24,7 @@ Online shopping application developed with AWS
 + Product photo upload AWS S3 service 
 + Chat bot provided for customers to ask about shopping product with AWS Lex   
 
-
++ Uploader service - TCP port - upload data to AWS S3 
 
 
 

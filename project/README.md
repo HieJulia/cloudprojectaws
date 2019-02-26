@@ -33,10 +33,14 @@ Online shopping application developed with AWS
     + Cloudwatch event rule triggers the Lambda consumer based on schedule - 10 mins 
     + Lambda consumer reads message from SQS - invoke woker for each message async 
     + 
+
     
-    
-    
-    
++ Crawler is running on AWS EC2 instance to crawl NASDAQ and NYSE listed Wiki pages 
+    + Data  
+
+
+
+vo tay 
     
     
     
@@ -75,6 +79,11 @@ Online shopping application developed with AWS
 
 
 + AWS Lambda functions 
+
+
++ AWS EC2 - AWS S3 - Apache Spark - AWS RDS MySQL 
+
+
      
 
 
@@ -222,31 +231,11 @@ Online shopping application developed with AWS
     
     
     
-    
- 
-
-
-
-
-
-
-
-
-
-
-
+  
 
 # Run test class 
 
 + Run test class
-
-
-
-
-
-
-
-
 
 
 
@@ -268,7 +257,6 @@ Online shopping application developed with AWS
 https://github.com/waleedarafa/Ecommerce-Shopping
 https://github.com/BhuwanUpadhyay/order-manager
 https://github.com/1904labs/AWS-ElasticSearch-Spring-Boot-Starter-Project
-https://github.com/SainathDutkar/StockWatch
 https://github.com/iftekharkhan09/AWS/tree/master/src/main/java/com/amazonaws/ses/samples
 
 
@@ -282,7 +270,3 @@ https://github.com/smoketurner/uploader
 --------------
 
 
-choi duoc no choi tu lau roi 
-
-
-1 phong cach mac do h 

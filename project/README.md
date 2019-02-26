@@ -60,6 +60,21 @@ Online shopping application developed with AWS
 + Jsoup
 
 
++ Back end: 
++ Database : MySQL(AWS RDS)
+
++ Image File storage : AWS S3 Bucket 
+
++ Deployment : AWS EC2 
+
+
+
+
+
+
+
+
+
 
 
 # Step  
@@ -197,11 +212,34 @@ Online shopping application developed with AWS
 + Run the example : `java -jar project.jar us-west-2`
 
 
++ Docker Deployment Steps 
+    + MySQL : 
+    + Build server with Docker 
+    + Run application with Docker 
+    
+    
+    
+    
+ 
+
+
+
+
+
+
+
+
+
+
 
 
 # Run test class 
 
 + Run test class
+
+
+
+
 
 
 
@@ -227,23 +265,21 @@ Online shopping application developed with AWS
 https://github.com/waleedarafa/Ecommerce-Shopping
 https://github.com/BhuwanUpadhyay/order-manager
 https://github.com/1904labs/AWS-ElasticSearch-Spring-Boot-Starter-Project
-https://github.com/varun1524/SurveyApe
 https://github.com/SainathDutkar/StockWatch
 https://github.com/iftekharkhan09/AWS/tree/master/src/main/java/com/amazonaws/ses/samples
 
 
-
-
 Big project : 
 https://github.com/Sandyarathi/eshop-microservice
-https://github.com/petergu/aws-sqs-lambda-java
-
 https://github.com/cganoo/codecamptweetsearcher
 https://github.com/smoketurner/uploader
 
 
 
 -----------------
+
+
+
 
 
 

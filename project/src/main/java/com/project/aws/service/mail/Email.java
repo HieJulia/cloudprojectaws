@@ -15,8 +15,17 @@ import sun.tools.java.Constants;
 
 public class Email {
 
+    private final String REGION = "US_EAST_1";
+
+
+    private final String CHARSET = "utf-8";
+
+
+
+
     public String sendEmail(EmailDTO emailDTO) {
-        private static final String REGION = "US_EAST_1";
+
+
 
         try {
 
@@ -34,25 +43,32 @@ public class Email {
                             // message - body
                             .withBody(new Body()
                                     .withHtml(new Content()
-                                            .withCharset(Constants.Email.CHARSET).withData(emailDTO.getHtmlBody()))
+                                            .withCharset(CHARSET).withData(emailDTO.getBody()))
                                     .withText(new Content()
-                                            .withCharset(Constants.Email.CHARSET).withData(emailDTO.getTextBody())))
+                                            .withCharset(CHARSET).withData(emailDTO.getBody())))
                             .withSubject(new Content()
-                                    .withCharset(Constants.Email.CHARSET).withData(emailDTO.getSubject())))
+                                    .withCharset(CHARSET).withData(emailDTO.getFrom())))
                     .withSource(emailDTO.getFrom());
 
+            // Validation
+            if (emailDTO.getBody()!= null){
 
-            // Validation - tro dua cua no-
-            if (emailDTO.getConfigSet() != null){
-                ((SendEmailRequest) client).withConfigurationSetName(emailDTO.getConfigSet());
+                ((SendEmailRequest) client).withConfigurationSetName(emailDTO.getBody());
+                // Thay vui vui
+
             }
+
 
             client.sendEmail(request);
 
             return Constants.Email.EMAIL_SENT_MESSAGE;
 
         } catch (Exception ex) {
+
             throw new EmailException(ex.getMessage());
+
         }
     }
 }
+
+

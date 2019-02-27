@@ -63,8 +63,18 @@ public class Validator {
     }
 
     // Validate the symbol on the page to be a geniune Stock symbol related to the webpage
+
+    /**
+     * Validate the symbol on the page to be a geniune stock symbol related to the webpage
+     * @param title
+     * @param symbol
+     * @return
+     */
     public static boolean validateSymbol(String title, String symbol) {
+
+        // Validate the symbol
         String StockName = null;
+
 
         StockName = stock.getProperty(symbol);
 
@@ -78,7 +88,13 @@ public class Validator {
             return false;
     }
 
-    // Validate the link to be a Nasdaq or NYSE page
+
+    /**
+     * Validate the link to be a Nasdaq or NYSE page
+
+     * @param Doc
+     * @return
+     */
     public static boolean validateLink(Document Doc) {
         if(Doc.toString().contains(NYSESymbol)||Doc.toString().contains(NasdaqSymbol))
             return true;
@@ -88,7 +104,34 @@ public class Validator {
 
 
 
+
+
+
+    
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

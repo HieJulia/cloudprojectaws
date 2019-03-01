@@ -17,15 +17,9 @@ public class Email {
 
     private final String REGION = "US_EAST_1";
 
-
     private final String CHARSET = "utf-8";
 
-
-
-
-    public String sendEmail(EmailDTO emailDTO) {
-
-
+    public void sendEmail(EmailDTO emailDTO) {
 
         try {
 
@@ -54,18 +48,13 @@ public class Email {
             if (emailDTO.getBody()!= null){
 
                 ((SendEmailRequest) client).withConfigurationSetName(emailDTO.getBody());
-                // Thay vui vui
 
             }
 
-
             client.sendEmail(request);
-
-            return Constants.Email.EMAIL_SENT_MESSAGE;
 
         } catch (Exception ex) {
 
-            throw new EmailException(ex.getMessage());
 
         }
     }

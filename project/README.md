@@ -40,7 +40,13 @@ Online shopping application developed with AWS
 
 
 
-vo tay 
++ Parse billing records file 
++ List billing records files stored in AWS S3 
++ Pull AWS billing records 
+
+
+
+
     
     
     
@@ -232,6 +238,13 @@ vo tay
     
     
   
+  
+  
+  
+   
+  
+  
+  
 
 # Run test class 
 
@@ -264,7 +277,9 @@ Big project :
 https://github.com/Sandyarathi/eshop-microservice
 https://github.com/cganoo/codecamptweetsearcher
 https://github.com/smoketurner/uploader
-
+https://github.com/brusic/elasticsearch-ingest-aws-rekognition
+https://github.com/dawudr/apache-spark-enron-data-analytics
+https://github.com/bufalobk/lambda-2-ecs-example
 
 
 --------------

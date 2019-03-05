@@ -43,11 +43,9 @@ Online shopping application developed with AWS
 + Parse billing records file 
 + List billing records files stored in AWS S3 
 + Pull AWS billing records 
++ Data ingestion - 
 
 
-
-
-    
     
     
 # Stack
@@ -87,10 +85,45 @@ Online shopping application developed with AWS
 + AWS Lambda functions 
 
 
-+ AWS EC2 - AWS S3 - Apache Spark - AWS RDS MySQL 
++ AWS EC2 - AWS S3 - Apache Spark - AWS RDS MySQL
 
 
-     
++ Set up Alexa skil
+    + Copy content of IntentSchema.json in Intent schema
+    + Sample utterances 
+    + AWS Lambda ARN
+    + Get function ARN 
+    
+  
+    
+    
+   
+   
+ 
++ Test : JUnit
+
+
+
+# Other practices 
+
++ AWS Lambda 
+    + Lambda worker 
+        + SQS queue 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -108,6 +141,12 @@ Online shopping application developed with AWS
     + MySQL RDS database 
     + Serverless framework 
     + Spring Cloud AWS 
+    
+    
+    + AWS credentials 
+    + Import EC2 instances with the imported key 
+    + Start ssh session - execute a script - across multiple session 
+    + Add instance admin accounts 
     
     
    
@@ -166,10 +205,20 @@ Online shopping application developed with AWS
 
 
 
++ Deploy 
 
+    + Launch 2 EC2 instances from AMI
+    + Create ELB and register with port - ping URL - cookies name 
+    
+    
 
-
-
+    
+    
+    
+    
+    
+    
+    
 
 
 
@@ -223,6 +272,14 @@ Online shopping application developed with AWS
     `aws cloudformation describe-stacks --stack-name spring-petclinic | jq '.Stacks[0].Outputs[0].OutputValue'`
     
     
+    
+    
+    
+    
+    
+    
+    
+    
 # Running the project
  
 + `mvn clean `
@@ -235,13 +292,11 @@ Online shopping application developed with AWS
     + Build server with Docker 
     + Run application with Docker 
     
-    
-    
   
   
   
   
-   
+  
   
   
   
@@ -282,6 +337,46 @@ https://github.com/dawudr/apache-spark-enron-data-analytics
 https://github.com/bufalobk/lambda-2-ecs-example
 
 
---------------
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+no con thich con be nay lam 

@@ -1,11 +1,22 @@
 package com.project.aws.config;
 
 
+import com.amazonaws.AmazonClientException;
 import com.project.aws.domain.crawler.WebsiteModel;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.auth.profile.ProfileCredentialsProvider;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.util.StringUtils;
 @Configuration
 public class DynamoDBConfig {
 
@@ -29,19 +40,6 @@ public class DynamoDBConfig {
     private String tableName;
 
 
-    // Choc no tuc len roi day - de xem ai hon ai
-
-
-
-
-    // Nay tui bay tuong tui bay hon duoc cai dau cua dan chau a a - tui no hoc cao hieu rong
-
-
-
-    // Du me may tuong tao la ai vay - thang tieu nhan nay
-
-
-
 
 
 //    @Bean(name = "websitemodel")
@@ -58,4 +56,30 @@ public class DynamoDBConfig {
 
 
 
+    @Bean
+    public AmazonDynamoDB amazonDynamoDB() {
+        AmazonDynamoDB amazonDynamoDB = new AmazonDynamoDBClient(amazonAWSCredentials());
+//        if (!StringUtils.isEmpty(amazonDynamoDBEndpoint)) {
+//            amazonDynamoDB.setEndpoint(amazonDynamoDBEndpoint);
+//        }
+        return amazonDynamoDB;
+    }
+
+    @Bean
+    public AWSCredentials amazonAWSCredentials() {
+        AWSCredentials credentials;
+        try {
+            credentials = new ProfileCredentialsProvider("default").getCredentials();
+        } catch(Exception e) {
+            throw new AmazonClientException(e);
+        }
+        return credentials;
+
+    }
+
+
 }
+
+
+
+

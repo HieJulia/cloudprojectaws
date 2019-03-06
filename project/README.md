@@ -329,17 +329,25 @@ https://github.com/iftekharkhan09/AWS/tree/master/src/main/java/com/amazonaws/se
 
 
 Big project : 
-https://github.com/Sandyarathi/eshop-microservice
-https://github.com/cganoo/codecamptweetsearcher
+
+Microservice
+https://github.com/Sandyarathi/eshop-microservice 
+
 https://github.com/smoketurner/uploader
-https://github.com/brusic/elasticsearch-ingest-aws-rekognition
+
 https://github.com/dawudr/apache-spark-enron-data-analytics
+
 https://github.com/bufalobk/lambda-2-ecs-example
 
 
 
 
 
+Hom nay lam project : 
+
+https://github.com/BhuwanUpadhyay/order-manager
+https://github.com/brusic/elasticsearch-ingest-aws-rekognition
+https://github.com/cganoo/codecamptweetsearcher
 
 
 
@@ -379,4 +387,4 @@ https://github.com/bufalobk/lambda-2-ecs-example
 
 
 
-no con thich con be nay lam 
+

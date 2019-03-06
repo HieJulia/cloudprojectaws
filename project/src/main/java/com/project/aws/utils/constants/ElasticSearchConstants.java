@@ -1,8 +1,11 @@
 package com.project.aws.utils.constants;
 
 public class ElasticSearchConstants {
+
     private ElasticSearchConstants() throws IllegalAccessException {
+
         throw new IllegalAccessException("ElasticSearchConstants is a utility class");
+
     }
 
     public static final String PRODUCTS_INDEX = "products";

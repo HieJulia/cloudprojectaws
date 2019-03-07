@@ -330,20 +330,12 @@ Online shopping application developed with AWS
 # Deploy the serverless app 
 + `sls deploy`
 
-
-
-https://github.com/waleedarafa/Ecommerce-Shopping
-https://github.com/BhuwanUpadhyay/order-manager
-https://github.com/iftekharkhan09/AWS/tree/master/src/main/java/com/amazonaws/ses/samples
-
-
-Big project : 
+ 
 
 
 https://github.com/Sandyarathi/eshop-microservice 
 https://github.com/smoketurner/uploader
 https://github.com/dawudr/apache-spark-enron-data-analytics
-https://github.com/bufalobk/lambda-2-ecs-example
 
 
 
@@ -352,20 +344,7 @@ Hom nay lam project :
 
 
 https://github.com/brusic/elasticsearch-ingest-aws-rekognition
-https://github.com/cganoo/codecamptweetsearcher
 
 
 
 
-
-
-
------------------
-
-
-
-
-
-
-
-movie database 

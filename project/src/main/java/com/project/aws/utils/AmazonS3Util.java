@@ -31,9 +31,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class AmazonS3Util {
 
-    // Ta biet cai kieu con nho nay roi - bay tro vui vui thoi -
 
-    // Day la con nguoi tap trung cho su nghiep
 
 
     //AmazonS3Client
@@ -57,7 +55,7 @@ public class AmazonS3Util {
                 secretKey = "";
                 bucketName = "";
 
-                // Tinh cach no la tinh cach cua 1 cai thang ay - No bo la no bo xuong luon a nghe may
+
 
 
                 credentials = new BasicAWSCredentials(accessKey, secretKey);
@@ -98,10 +96,6 @@ public class AmazonS3Util {
         }
     }
 
-    // Cha biet con lin nay no dang suy nghi gi nua - No dua dua vay thoi
-
-    // Chu khong co y gi dau
-
 
 
     /**
@@ -132,7 +126,7 @@ public class AmazonS3Util {
     }
 
 
-    // Kieu bi dien - Tui bay kieu hoang tuong qua - Thoai mai ma duoi viec tao day nay
+
 
 
     /**
@@ -221,7 +215,7 @@ public class AmazonS3Util {
         }
     }
 
-    // No gia vo day mi oi - Mat no kieu - Tui dau co biet cai me gi dau -
+
 
     /**
      *

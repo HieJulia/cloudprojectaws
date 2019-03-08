@@ -346,5 +346,3 @@ Hom nay lam project :
 https://github.com/brusic/elasticsearch-ingest-aws-rekognition
 
 
-
-

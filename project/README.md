@@ -51,12 +51,8 @@ Online shopping application developed with AWS
 
 + Deploying service : AWS Codebuild - AWS CodePipeline 
 
-+ 
-
-
-
-
-
++ Cart service  
+    + Serverless  
 
 
 
@@ -110,9 +106,7 @@ Online shopping application developed with AWS
     
   
     
-    
-   
-   
+  
  
 + Test : JUnit
 
@@ -123,20 +117,6 @@ Online shopping application developed with AWS
 + AWS Lambda 
     + Lambda worker 
         + SQS queue 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -226,19 +206,6 @@ Online shopping application developed with AWS
     
     
 
-    
-    
-    
-    
-    
-    
-    
-
-
-
-
-
-
 
 ------------------
 
@@ -287,8 +254,7 @@ Online shopping application developed with AWS
     
     
     
-    
-    
+  
 
 # Running the project
  
@@ -302,13 +268,6 @@ Online shopping application developed with AWS
     + Build server with Docker 
     + Run application with Docker 
     
-  
-  
-  
-  
-  
-  
-  
   
 
 # Run test class 
@@ -344,5 +303,12 @@ Hom nay lam project :
 
 
 https://github.com/brusic/elasticsearch-ingest-aws-rekognition
+
+
+
+
+----------
+
+
 
 

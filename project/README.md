@@ -52,7 +52,19 @@ Online shopping application developed with AWS
 + Deploying service : AWS Codebuild - AWS CodePipeline 
 
 + Cart service  
-    + Serverless  
+    + Serverless architecture 
+    + AWS Lambda 
+    + AWS API gateway
+    + Test  
+    
+    
+    
+    
+    
+    
+    
+    
+     
 
 
 

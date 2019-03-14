@@ -29,6 +29,11 @@ public class CartDaoImpl implements CartDao {
     private static AmazonDynamoDBClient ddbClient = new AmazonDynamoDBClient();
 
 
+    // Credentials - AWS DynamoDBclient
+
+
+
+
 
     /**
      * Returns the initialized default instance of the PetDAO
@@ -43,9 +48,6 @@ public class CartDaoImpl implements CartDao {
         return instance;
     }
 
-    protected CartDAOImpl() {
-        // constructor is protected so that it can't be called from the outside
-    }
 
     /**
      * Returns a DynamoDBMapper object initialized with the default DynamoDB client
@@ -56,13 +58,20 @@ public class CartDaoImpl implements CartDao {
         return new DynamoDBMapper(ddbClient);
     }
 
+
+    // Get cart by state
     @Override
-    public Cart getCartByState(String cartState) throws DAOException {
+    public Cart getCartByState(String cartState) {
+        // Mapper - load - Cart
         return getMapper().load(Cart.class, cartState);
+
+        // Cua bon thuy dien
     }
 
+
+    // Get cart by login id
     @Override
-    public List<Cart> getCartByLoginId(String loginId) throws DAOException {
+    public List<Cart> getCartByLoginId(String loginId) {
         //QUERY EXPRESSION TO PULL ONLY OPEN ITEM STATE
         Cart cartKey = new Cart();
         cartKey.setLoginId(loginId);
@@ -80,13 +89,13 @@ public class CartDaoImpl implements CartDao {
     }
 
     @Override
-    public String createCart(Cart cart) throws DAOException {
+    public String createCart(Cart cart){
         getMapper().save(cart, new DynamoDBMapperConfig(SaveBehavior.UPDATE));
         return cart.getLoginId();
     }
 
     @Override
-    public void deleteItem(Cart cart) throws DAOException {
+    public void deleteItem(Cart cart){
         if(StringUtils.isEmpty(cart.getSku())){
             deleteAll(cart);
         }
@@ -95,10 +104,13 @@ public class CartDaoImpl implements CartDao {
         }
     }
 
+
+    // Delete all data in DynamoDB table
     @Override
-    public void deleteAll(Cart cart) throws DAOException {
+    public void deleteAll(Cart cart){
         //IF SKU IS NOT PRESENT LIST ALL ITEM AND THEN DELETE THEM
         List<Cart> cartCollection = getCartByLoginId(cart.getLoginId());
+        // Get
         for(Cart cct : cartCollection){
             Cart ct = new Cart();
             ct.setLoginId(cct.getLoginId());
@@ -107,5 +119,7 @@ public class CartDaoImpl implements CartDao {
         }
     }
 }
+
+// Ko thay no dap ban dap ghe
 
 

@@ -8,8 +8,9 @@ import java.util.Map;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
+import com.amazonaws.util.DateUtils;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
+import com.project.aws.config.DynamoDBConfiguration;
 
 
 @DynamoDBTable(tableName = DynamoDBConfiguration.CART_TABLE_NAME)
@@ -25,8 +26,8 @@ public class Cart implements Serializable {
     private String sku;
 
     private String email;
-    private String createdAt = DateUtils.getStringDate(new Date());
-    private String updatedAt = DateUtils.getStringDate(new Date());
+    private Date createdAt = new Date();
+    private Date updatedAt = new Date();
 
     private String source;
 
@@ -43,12 +44,6 @@ public class Cart implements Serializable {
 
 
     private Map<String,String> additionalAttributes = new HashMap<String,String>();
-
-
-
-    // Cart : itemState, loginId, sku,
-
-
 
 
 
@@ -111,14 +106,12 @@ public class Cart implements Serializable {
      * @return the createdAt
      */
     @DynamoDBAttribute(attributeName = "createdAt")
-    public String getCreatedAt() {
+    public Date getCreatedAt() {
         return createdAt;
     }
 
-    /**
-     * @param createdAt the createdAt to set
-     */
-    public void setCreatedAt(String createdAt) {
+
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 
@@ -126,14 +119,14 @@ public class Cart implements Serializable {
      * @return the updatedAt
      */
     @DynamoDBAttribute(attributeName = "updatedAt")
-    public String getUpdatedAt() {
+    public Date getUpdatedAt() {
         return updatedAt;
     }
 
     /**
      * @param updatedAt the updatedAt to set
      */
-    public void setUpdatedAt(String updatedAt) {
+    public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
 

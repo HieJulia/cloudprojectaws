@@ -56,6 +56,10 @@ Online shopping application developed with AWS
     + AWS Lambda 
     + AWS API gateway
     + Test  
+
+
++ Upload service 
+    + AWS S3 
     
     
     

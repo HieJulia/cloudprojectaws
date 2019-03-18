@@ -106,20 +106,16 @@ public class UploadService {
 //                    s3object.getObjectMetadata().getContentType());
 
 
-            // Filepath
-
             s3client.getObject(new GetObjectRequest(bucketName, filename),
                     new File(String.valueOf(filename)));
 
-
-
         } catch (AmazonServiceException ase) {
+
             // Log : AmazonServiceException
+
         } catch (AmazonClientException ace) {
+
             // Log : AmazonClientException
-
-
-
 
         }
     }

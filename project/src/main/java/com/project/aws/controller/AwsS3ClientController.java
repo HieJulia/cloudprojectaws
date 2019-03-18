@@ -27,16 +27,12 @@ public class AwsS3ClientController {
 
         if(file.getSize() == 0 ){
             // Log error
-
             return "File is not valid";
-
-        } else {
+       } else {
             this.uploadService.uploadFile(file);
             return "Successful";
         }
     }
-
-
 }
 
 

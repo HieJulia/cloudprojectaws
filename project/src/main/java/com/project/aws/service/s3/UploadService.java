@@ -8,14 +8,19 @@ import java.util.Date;
 
 import javax.annotation.PostConstruct;
 
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.AmazonServiceException;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
+import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 
+import com.amazonaws.services.s3.model.S3Object;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -81,5 +86,44 @@ public class UploadService {
                 new PutObjectRequest(this.bucketName, fileName, file).withCannedAcl(
                         CannedAccessControlList.PublicRead));
     }
+
+
+    // Download function
+
+    public void downloadObject(String bucketName, String filename) throws IOException {
+
+//        AmazonS3 s3client = new AmazonS3Client(new ProfileCredentialsProvider());
+        AmazonS3 s3client = new AmazonS3Client();
+
+        // File path
+
+        try {
+
+            S3Object s3object = s3client.getObject(new GetObjectRequest(
+                    bucketName, filename));
+
+//            MainModel.getInstance().print("Content-Type: "  +
+//                    s3object.getObjectMetadata().getContentType());
+
+
+            // Filepath
+
+            s3client.getObject(new GetObjectRequest(bucketName, filename),
+                    new File(String.valueOf(filename)));
+
+
+
+        } catch (AmazonServiceException ase) {
+            // Log : AmazonServiceException
+        } catch (AmazonClientException ace) {
+            // Log : AmazonClientException
+
+
+
+
+        }
+    }
+
+
 }
 

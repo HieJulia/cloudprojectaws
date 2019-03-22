@@ -1,9 +1,7 @@
 package com.project.aws.utils;
 
 
-/**
- * String utils
- */
+
 public class StringUtils {
 
 
@@ -16,3 +14,8 @@ public class StringUtils {
     }
 
 }
+
+
+
+
+

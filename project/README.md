@@ -62,17 +62,40 @@ Online shopping application developed with AWS
     + AWS S3 
     
     
-    
-    
-    
-    
-    
-    
-     
+
++ ElasticSearch ingest processor 
+    + NLP analysis 
+    + Hook ES as a data source for AWS topic modeling 
+    + NLP request
+        + Keyphrase extraction 
+        + Sentiment analysis 
+        + Entity recognition 
+        + Language detection
+        
+        
+        
+        
+         
+        
+        
+        
+        
 
 
 
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 # Stack
 
@@ -95,7 +118,10 @@ Online shopping application developed with AWS
 
 + JMS  
 
-+ Test : Wiremocks 
++ Test 
+    + Wiremocks, Unit test, Spock framework
+    + Integration test - ElasticMQ, Mockito, TestEnvModule 
+    + Automation everything - using Terraform 
 
 + Jsoup
 
@@ -324,6 +350,11 @@ https://github.com/brusic/elasticsearch-ingest-aws-rekognition
 
 
 ----------
+
+
+
+
+
 
 
 

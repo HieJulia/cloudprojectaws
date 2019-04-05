@@ -74,29 +74,7 @@ Online shopping application developed with AWS
         
         
         
-        
-         
-        
-        
-        
-        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
 # Stack
 
  
@@ -332,27 +310,6 @@ Online shopping application developed with AWS
 + `sls deploy`
 
  
-
-
-https://github.com/Sandyarathi/eshop-microservice 
-https://github.com/smoketurner/uploader
-https://github.com/dawudr/apache-spark-enron-data-analytics
-
-
-
-
-Hom nay lam project : 
-
-
-https://github.com/brusic/elasticsearch-ingest-aws-rekognition
-
-
-
-
-----------
-
-
-
 
 
 

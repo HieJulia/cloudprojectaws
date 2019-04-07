@@ -1,11 +1,7 @@
 # cloudprojectaws
-
-
+Collections of AWS - Cloud Foundry 
 ### Amazon elastic compute cloud - EC2
 + AWS Simple Queue Service(SQS)
-
-
-
 
 + Building server using AWS EC2 
     + EC2 instance type 
@@ -79,7 +75,6 @@
                 + Enable AWS cloud watch 
                 + Continuous compliance 
                 + Automate audit 
-+ 
 
 
 ### Cloud Foundry
@@ -96,6 +91,3 @@
         + Log in to the target CF instance using the CLI 
         + Push the simple app 
 + PCF Dev 
-    + 
-
-

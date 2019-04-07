@@ -2,10 +2,8 @@
  
 Online shopping application developed with AWS 
 
- 
 
 # Feature 
-
 + Cart API with AWS API gateway and AWS Lambda function 
 + Web crawler to crawl data
     + URL 
@@ -16,6 +14,17 @@ Online shopping application developed with AWS
 + PDF service 
 + Streaming service 
     + Audio stream service
+    
+    
++ Tweet searcher - AWS Lambda functions - Read data tweets stored S3 and index in ES cluster 
+ 
+
+
+
+
+
+
+
 + Service to detect object and then index in AWS ElasticSearch database 
 + AWS Router 53 - hosted zone DNS record 
 + Allow Read / Write from local to remote instances
@@ -23,46 +32,26 @@ Online shopping application developed with AWS
 + ETL processing on the cloud 
 + Product photo upload AWS S3 service 
 + Chat bot provided for customers to ask about shopping product with AWS Lex   
-
 + Uploader service - TCP port - upload data to AWS S3 
-
 + Integrate AWS Lambda - API gateway - SQS
     + Other system hit the API gateway endpoint 
     + API gateway sends messages to SQS queue 
     + SQS queue receives and stores messages 
     + Cloudwatch event rule triggers the Lambda consumer based on schedule - 10 mins 
     + Lambda consumer reads message from SQS - invoke woker for each message async 
-    + 
-
 + Crawler is running on AWS EC2 instance to crawl NASDAQ and NYSE listed Wiki pages 
-
-
 + List billing records files stored in AWS S3 
 + Pull AWS billing records 
-
-
 + Authentication service : AWS Cognito 
-
-+ API service - AWS API gateway 
-
-+ Static host : AWS S3 
-
-+ Logging and Monitoring : AWS Cloudwatch - alarm 
-
++ API service - AWS API gateway
++ Logging and Monitoring : AWS Cloudwatch - Alarms
 + Deploying service : AWS Codebuild - AWS CodePipeline 
-
 + Cart service  
     + Serverless architecture 
     + AWS Lambda 
     + AWS API gateway
     + Test  
-
-
-+ Upload service 
-    + AWS S3 
-    
-    
-
++ Upload service with AWS S3 
 + ElasticSearch ingest processor 
     + NLP analysis 
     + Hook ES as a data source for AWS topic modeling 
@@ -73,74 +62,38 @@ Online shopping application developed with AWS
         + Language detection
         
         
-        
 
 # Stack
-
- 
 + Java - Spring framework
-
-+ Apache Maven 
-
++ Apache Maven
 + Reactive streams - Async queues 
-
 + AWS 
     + AWS Lambda functions  
     + AWS API gateway
     + Database : AWS DynamoDB
     + SQS endpoint 
     + Amazon Elastic Beanstalk
-       
-   
 + Jenkins 
-
 + JMS  
-
 + Test 
     + Wiremocks, Unit test, Spock framework
     + Integration test - ElasticMQ, Mockito, TestEnvModule 
-    + Automation everything - using Terraform 
-
-+ Jsoup
-
-
-+ Back end: 
+    + Automation everything - using Terraform  
 + Database : MySQL(AWS RDS)
-
 + Image File storage : AWS S3 Bucket 
-
 + Deployment : AWS EC2 
-
-
 + AWS Lambda functions 
-
-
 + AWS EC2 - AWS S3 - Apache Spark - AWS RDS MySQL
-
-
 + Set up Alexa skil
     + Copy content of IntentSchema.json in Intent schema
     + Sample utterances 
     + AWS Lambda ARN
-    + Get function ARN 
-    
-  
-    
-  
- 
-+ Test : JUnit
-
-
-
+    + Get function ARN
 # Other practices 
 
 + AWS Lambda 
     + Lambda worker 
         + SQS queue 
-
-
-
-
 
 # Step  
 + AWS
@@ -174,10 +127,7 @@ Online shopping application developed with AWS
     + Write capacity units 
     + Provision :  
     
-    
 + AWS Lambda function
-    +  
-    
     
 + AWS Kinesis stream 
     + Subscribe to AWS Kinesis stream
@@ -215,8 +165,6 @@ Online shopping application developed with AWS
 
 + View the metrics from the serverless framework 
     `serverless metrics`
-
-
 
 
 + Deploy 

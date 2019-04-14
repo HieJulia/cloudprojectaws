@@ -1,8 +1,6 @@
 # Project description
  
 Online shopping application developed with AWS 
-
-
 # Feature 
 + Cart API with AWS API gateway and AWS Lambda function 
 + Web crawler to crawl data
@@ -14,17 +12,7 @@ Online shopping application developed with AWS
 + PDF service 
 + Streaming service 
     + Audio stream service
-    
-    
 + Tweet searcher - AWS Lambda functions - Read data tweets stored S3 and index in ES cluster 
- 
-
-
-
-
-
-
-
 + Service to detect object and then index in AWS ElasticSearch database 
 + AWS Router 53 - hosted zone DNS record 
 + Allow Read / Write from local to remote instances
@@ -60,9 +48,6 @@ Online shopping application developed with AWS
         + Sentiment analysis 
         + Entity recognition 
         + Language detection
-        
-        
-
 # Stack
 + Java - Spring framework
 + Apache Maven
@@ -90,11 +75,9 @@ Online shopping application developed with AWS
     + AWS Lambda ARN
     + Get function ARN
 # Other practices 
-
 + AWS Lambda 
     + Lambda worker 
         + SQS queue 
-
 # Step  
 + AWS
     + Set up AWS credentials 
@@ -108,17 +91,10 @@ Online shopping application developed with AWS
     + MySQL RDS database 
     + Serverless framework 
     + Spring Cloud AWS 
-    
-    
     + AWS credentials 
     + Import EC2 instances with the imported key 
     + Start ssh session - execute a script - across multiple session 
     + Add instance admin accounts 
-    
-    
-   
-
-
 + Create table on DynamoDB
     + Name : 'cart'
     + Partition key ; 'loginId'(String)
@@ -126,58 +102,31 @@ Online shopping application developed with AWS
     + Read capacity units 
     + Write capacity units 
     + Provision :  
-    
-+ AWS Lambda function
-    
++ AWS Lambda function    
 + AWS Kinesis stream 
     + Subscribe to AWS Kinesis stream
     + Devices send data to cloud  
     + Subscribe Kinesis stream to ARTIK cloud via API calls 
     + Read data from Kinesis Stream using AWS SDK  
-
-
 + AWS Healthcheck 
 + AWS Rekognition
-
-
 + Build & deploy - Docker image built for Java project on AWS ECS with Jenkins pipeline  
-
-
 + AWS SES sender email 
-
 + AWS Cloudsearch client for uploading documents and querying your search domains written in Java
-
-
- 
 + Generic e-mailer using Amazon SES SMTP Java Interface
-
 + AWS data pipeline task runner
-
-
-
 + AWS ElasticSearch 
 + AWS Rekcognition
-
-
-
 + View the CloudWatch logs 
     `serverless logs --function functionName`
-
-+ View the metrics from the serverless framework 
-    `serverless metrics`
-
-
 + Deploy 
-
     + Launch 2 EC2 instances from AMI
     + Create ELB and register with port - ping URL - cookies name 
-    
-    
 
 
 ------------------
 
-
+Note 
   build the image docker build -t build-deploy:latest -f Dockerfile .
   
   run the container docker run -it docker run -e "ECS_CLUSTER=cluster-test" -e "ACCESS_KEY=my_access_key" -e "SECRET_KEY=my_secret_key" -e "REGIAN=eu-west-1" -p 8080:8080 -p 5000:5000 -v jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock build-deploy:latest
@@ -185,10 +134,6 @@ Online shopping application developed with AWS
   Test your commands inside the container docker exec -it CONTAINER_ID bash
   
   Configure your job on Jenkins localhost:8080
-  
-  NOTE
-  This is a part of another open source project that I'm working on. A bootstrap project to work with Microservices using Spring cloud. here
-  
   
  
   Tips
@@ -199,18 +144,8 @@ Online shopping application developed with AWS
   To get the build number sh "echo ${BUILD_NUMBER}"
   
   Jenkins login - admin - admin
-  
-  
-+ Deploy the web application : 
-
-     
-    
-    
-    
+      
 + AWS EC2 instance -> deploy the application 
-
-
-
 
 + Deploy application commands 
      
@@ -220,47 +155,12 @@ Online shopping application developed with AWS
     
     `aws cloudformation describe-stacks --stack-name spring-petclinic | jq '.Stacks[0].Outputs[0].OutputValue'`
     
-    
-    
-  
 
 # Running the project
- 
 + `mvn clean `
-
 + Run the example : `java -jar project.jar us-west-2`
-
-
 + Docker Deployment Steps 
     + MySQL : 
     + Build server with Docker 
     + Run application with Docker 
     
-  
-
-# Run test class 
-
-+ Run test class
-
-
-
-# A build deploy docker image to work with Java application and AWS
-
-
-
-# Docker image build
-
-`docker build -t devbhuwan/order-manager-image -f infrastructure/Dockerfile .`
-
-
-
-# Deploy the serverless app 
-+ `sls deploy`
-
- 
-
-
-
-
-
-
